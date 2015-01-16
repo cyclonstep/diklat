@@ -20,13 +20,14 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'pelatihan_id'); ?>
-		<?php echo $form->textField($model,'pelatihan_id'); ?>
+		<?php echo $form->labelEx($model,'Tipe Pelatihan'); ?>
+		<?php echo $form->dropDownList($model,'pelatihan_id',CHtml::ListData(Pelatihan::model()->findAll(),'id_pelatihan','nama_pelatihan'),
+				array('prompt'=>'Pilih Tipe Pelatihan','style'=>'width:355px;')); ?>
 		<?php echo $form->error($model,'pelatihan_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'nama'); ?>
+		<?php echo $form->labelEx($model,'Judul Pelatihan'); ?>
 		<?php echo $form->textField($model,'nama',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'nama'); ?>
 	</div>
@@ -51,6 +52,11 @@
 			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 				'model' => $model,
 				'attribute' => 'tgl_mulai',
+				'value' => $model->tgl_mulai,
+				'options'=> 
+    				array(
+					'dateFormat'=>'yy-mm-dd', 									
+    				),
 				'htmlOptions' => array(
 				'style'=>'width:190px;',         // textField size
 				'maxlength' => '20',    // textField maxlength
@@ -66,9 +72,14 @@
 			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 				'model' => $model,
 				'attribute' => 'tgl_selesai',
+				'value' => $model->tgl_selesai,
+				'options'=> 
+    				array(
+					'dateFormat'=>'yy-mm-dd', 									
+    				),
 				'htmlOptions' => array(
-				'style'=>'width:190px;',         // textField size
-				'maxlength' => '20',    // textField maxlength
+					'style'=>'width:190px;',         // textField size
+					'maxlength' => '20',    // textField maxlength
 				),
 			));
 		?>

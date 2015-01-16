@@ -22,7 +22,7 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'pelatihan_id',
+		array('name'=>'pelatihan_id','value'=>$model->pelatihan->nama_pelatihan),
 		'nama',
 		'status_daftar',
 		'status_selesai',

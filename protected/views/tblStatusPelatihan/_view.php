@@ -10,7 +10,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('pelatihan_id')); ?>:</b>
-	<?php echo CHtml::encode($data->pelatihan_id); ?>
+	<?php echo CHtml::encode($data->pelatihan->nama_pelatihan); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('nama')); ?>:</b>

@@ -1,0 +1,26 @@
+<?php
+$this->breadcrumbs=array(
+	UserModule::t('Users')=>array('admin'),
+	UserModule::t('Create'),
+);
+?>
+
+<?php
+
+   
+?>
+
+<h1><?php echo UserModule::t("Create User"); ?></h1>
+
+<?php 
+	echo $this->renderPartial('_menu',array(
+		'list'=> array(),
+	));
+	if (Yii::app()->user->isSuperuser) {
+       $all_roles=new RAuthItemDataProvider('roles', array( 
+    'type'=>2,
+    ));
+      $data=$all_roles->fetchData();}
+	echo $this->renderPartial('_form', array('model'=>$model,'profile'=>$profile));
+
+?>

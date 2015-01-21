@@ -62,12 +62,12 @@ class TblStatusPelatihan extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'pelatihan_id' => 'Pelatihan',
-			'nama' => 'Nama',
+			'pelatihan_id' => 'Tipe Pelatihan',
+			'nama' => 'Judul Pelatihan',
 			'status_daftar' => 'Status Daftar',
 			'status_selesai' => 'Status Selesai',
-			'tgl_mulai' => 'Tgl Mulai',
-			'tgl_selesai' => 'Tgl Selesai',
+			'tgl_mulai' => 'Tanggal Mulai',
+			'tgl_selesai' => 'Tanggal Selesai',
 		);
 	}
 

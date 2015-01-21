@@ -16,12 +16,16 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		//application modules for yii-user
 		'application.modules.user.models.*',
 		'application.modules.user.components.*',
 		'application.modules.rights.*',
+		//application modules for yii-rights
 		//'application.modules.rights.models.*',
 		'application.modules.rights.components.*',
 		'application.modules.rights.components.dataproviders.*',
+		//extension components for giix
+		'ext.giix-components.*', //giix components
 	),
 
 	'modules'=>array(
@@ -47,6 +51,7 @@ return array(
 			'password'=>'123',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
+			'generatorPaths'=> array('ext.giix-core'), //giix generators
 		),
 		
 	),
